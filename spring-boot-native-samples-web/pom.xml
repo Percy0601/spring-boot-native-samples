@@ -27,10 +27,15 @@
             <plugin>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
+                <version>${native-build-tools-plugin.version}</version>
+                <configuration>
+                    <mainClass>io.samples.web.WebBootstrap</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.2.3</version>
                 <configuration>
                     <excludes>
                         <exclude>
