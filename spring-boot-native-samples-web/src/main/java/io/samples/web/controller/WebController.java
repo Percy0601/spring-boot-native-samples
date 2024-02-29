@@ -1,8 +1,10 @@
 package io.samples.web.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,5 +23,11 @@ public class WebController {
         return "Hello World!";
     }
 
-
+    @GetMapping("/test-rest-template")
+    public String testRestTemplate() {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://www.baidu.com", String.class);
+        log.info("=================status:{}, content:{}", responseEntity.getStatusCode(), responseEntity.getBody());
+        return responseEntity.getBody();
+    }
 }
