@@ -1,0 +1,3 @@
+2024-02-29 21:21:08.759731+08:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS `author` ( `id` bigint NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL DEFAULT '', PRIMARY KEY (`id`) ) ENGINE[*]=InnoDB"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS `author` ( `id` bigint NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL DEFAULT '', PRIMARY KEY (`id`) ) ENGINE=InnoDB [42001-224]

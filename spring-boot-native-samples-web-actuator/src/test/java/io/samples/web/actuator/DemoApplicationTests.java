@@ -1,4 +1,4 @@
-package io.samples.web;
+package io.samples.web.actuator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
