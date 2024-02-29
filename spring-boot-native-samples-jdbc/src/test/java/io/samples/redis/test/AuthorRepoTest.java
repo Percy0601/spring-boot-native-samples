@@ -1,4 +1,4 @@
-package io.samples.jdbc.test;
+package io.samples.redis.test;
 
 import java.util.List;
 import java.util.Set;
