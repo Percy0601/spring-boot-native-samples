@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-boot-native-samples-web</module>
+        <module>spring-boot-native-samples-httpclient5</module>
         <module>spring-boot-native-samples-jdbc</module>
         <module>spring-boot-native-samples-redis</module>
         <module>spring-boot-native-samples-web-actuator</module>

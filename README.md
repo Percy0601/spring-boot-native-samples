@@ -1,10 +1,11 @@
 # spring-boot-native-samples
 ## Preview
 
-| Feature                             | Executable Size | Memory Size | Startup Time |
-|-------------------------------------|-----------------|-------------|--------------|
-| spring-boot-native-samples-web      | 85MB            | 27MB        | 0.123        |
-| spring-boot-native-samples-jpa-jdbc | 99MB            | 44MB        | 0.599        |
+| Feature                                | Executable Size | Memory Size | Startup Time |
+|----------------------------------------|-----------------|-------------|--------------|
+| spring-boot-native-samples-web         | 85MB            | 27MB        | 0.123        |
+| spring-boot-native-samples-jpa-jdbc    | 99MB            | 44MB        | 0.599        |
+| spring-boot-native-samples-httpclient5 | 85MB            | 27MB        | 0.201        |
 
 
 
