@@ -1,4 +1,4 @@
-package io.samples.jdbc.h2.test;
+package io.samples.mybatis.test;
 
 import java.util.List;
 import java.util.Set;
@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import io.samples.jdbc.h2.entity.Author;
-import io.samples.jdbc.h2.entity.Book;
-import io.samples.jdbc.h2.repo.AuthorRepository;
+import io.samples.mybatis.entity.Author;
+import io.samples.mybatis.entity.Book;
+import io.samples.mybatis.repo.AuthorRepository;
 import lombok.extern.slf4j.Slf4j;
 
 /**

@@ -1,11 +1,11 @@
-package io.samples.jdbc.h2.repo;
+package io.samples.mybatis.repo;
 
 import java.util.Optional;
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.ListCrudRepository;
 
-import io.samples.jdbc.h2.entity.Author;
+import io.samples.mybatis.entity.Author;
 
 /**
  * @author: baoxin.zhao

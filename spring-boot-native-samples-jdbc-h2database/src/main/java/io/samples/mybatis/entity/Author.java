@@ -1,4 +1,4 @@
-package io.samples.jdbc.h2.entity;
+package io.samples.mybatis.entity;
 
 import java.util.Objects;
 import java.util.Set;

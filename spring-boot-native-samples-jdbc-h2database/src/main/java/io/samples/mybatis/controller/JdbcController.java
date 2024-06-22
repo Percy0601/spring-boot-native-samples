@@ -1,4 +1,4 @@
-package io.samples.jdbc.h2.controller;
+package io.samples.mybatis.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.samples.jdbc.h2.entity.Author;
-import io.samples.jdbc.h2.repo.AuthorRepository;
+import io.samples.mybatis.entity.Author;
+import io.samples.mybatis.repo.AuthorRepository;
 import lombok.extern.slf4j.Slf4j;
 
 /**
