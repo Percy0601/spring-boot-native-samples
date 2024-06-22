@@ -15,6 +15,8 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.handlers.CompositeEnumTypeHandler;
 import com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler;
 import com.baomidou.mybatisplus.core.override.MybatisMapperMethod;
+import com.baomidou.mybatisplus.core.override.MybatisMapperProxy;
+import com.baomidou.mybatisplus.core.toolkit.LambdaUtils;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import com.baomidou.mybatisplus.core.toolkit.support.SerializedLambda;
 import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
@@ -147,6 +149,7 @@ public class MyBatisNativeConfiguration {
             hints.serialization().registerType(NormalSegmentList.class);
             hints.serialization().registerType(AbstractISegmentList.class);
             hints.serialization().registerType(MergeSegments.class);
+            hints.serialization().registerType(MybatisMapperProxy.class);
 
             hints.reflection().registerType(SFunction.class);
             hints.reflection().registerType(SerializedLambda.class);
@@ -156,6 +159,8 @@ public class MyBatisNativeConfiguration {
             hints.reflection().registerType(AbstractISegmentList.class);
             hints.reflection().registerType(MergeSegments.class);
             hints.reflection().registerType(MybatisMapperMethod.class);
+            hints.reflection().registerType(LambdaUtils.class);
+            hints.reflection().registerType(MybatisMapperProxy.class);
 
             hints.proxies().registerJdkProxy(StatementHandler.class);
             hints.proxies().registerJdkProxy(Executor.class);
@@ -164,6 +169,7 @@ public class MyBatisNativeConfiguration {
 
             //        hints.reflection().registerType(MybatisPlusInterceptor.class);
             hints.reflection().registerType(AbstractWrapper.class, MemberCategory.values());
+            hints.reflection().registerType(AbstractLambdaWrapper.class, MemberCategory.values());
             hints.reflection().registerType(LambdaQueryWrapper.class, MemberCategory.values());
             hints.reflection().registerType(LambdaUpdateWrapper.class, MemberCategory.values());
             hints.reflection().registerType(UpdateWrapper.class, MemberCategory.values());
