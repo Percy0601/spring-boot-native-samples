@@ -26,7 +26,7 @@ public class RedisController {
 
     @GetMapping("/key/put")
     public String putKey(String user) {
-        redisTemplate.opsForValue().set(user, UUID.randomUUID(), 1, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(user, UUID.randomUUID(), 1, TimeUnit.DAYS);
         return "OK";
     }
 

@@ -14,8 +14,10 @@
 mvn clean -DskipTests=true -Pnative native:compile
 ```
 
-
-
+运行时参数指定：
+```
+./xxx -Xms50m -Xmx50m -Xmn50m
+```
 ## spring-boot-native-samples-web
 Basic Spring Boot Web
 
