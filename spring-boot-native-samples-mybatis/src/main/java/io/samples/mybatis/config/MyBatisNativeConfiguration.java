@@ -1,28 +1,19 @@
 package io.samples.mybatis.config;
 
-import com.baomidou.mybatisplus.annotation.IEnum;
-import com.baomidou.mybatisplus.core.MybatisParameterHandler;
-import com.baomidou.mybatisplus.core.MybatisXMLLanguageDriver;
-import com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper;
-import com.baomidou.mybatisplus.core.conditions.AbstractWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.segments.AbstractISegmentList;
-import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
-import com.baomidou.mybatisplus.core.conditions.segments.NormalSegmentList;
-import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.handlers.CompositeEnumTypeHandler;
-import com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler;
-import com.baomidou.mybatisplus.core.override.MybatisMapperMethod;
-import com.baomidou.mybatisplus.core.override.MybatisMapperProxy;
-import com.baomidou.mybatisplus.core.toolkit.LambdaUtils;
-import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
-import com.baomidou.mybatisplus.core.toolkit.support.SerializedLambda;
-import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
-import com.baomidou.mybatisplus.extension.handlers.GsonTypeHandler;
-import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
-import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;
@@ -33,12 +24,6 @@ import org.apache.ibatis.cache.decorators.LruCache;
 import org.apache.ibatis.cache.decorators.SoftCache;
 import org.apache.ibatis.cache.decorators.WeakCache;
 import org.apache.ibatis.cache.impl.PerpetualCache;
-import org.apache.ibatis.executor.Executor;
-import org.apache.ibatis.executor.parameter.ParameterHandler;
-import org.apache.ibatis.executor.resultset.ResultSetHandler;
-import org.apache.ibatis.executor.statement.BaseStatementHandler;
-import org.apache.ibatis.executor.statement.RoutingStatementHandler;
-import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.javassist.util.proxy.ProxyFactory;
 import org.apache.ibatis.javassist.util.proxy.RuntimeSupport;
 import org.apache.ibatis.logging.Log;
@@ -48,7 +33,6 @@ import org.apache.ibatis.logging.log4j2.Log4j2Impl;
 import org.apache.ibatis.logging.nologging.NoLoggingImpl;
 import org.apache.ibatis.logging.slf4j.Slf4jImpl;
 import org.apache.ibatis.logging.stdout.StdOutImpl;
-import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.reflection.TypeParameterResolver;
 import org.apache.ibatis.scripting.defaults.RawLanguageDriver;
 import org.apache.ibatis.scripting.xmltags.XMLLanguageDriver;
@@ -68,7 +52,6 @@ import org.springframework.beans.factory.aot.BeanRegistrationExcludeFilter;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcessor;
 import org.springframework.beans.factory.support.RegisteredBean;
 import org.springframework.beans.factory.support.RootBeanDefinition;
@@ -78,20 +61,6 @@ import org.springframework.context.annotation.ImportRuntimeHints;
 import org.springframework.core.ResolvableType;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author: baoxin.zhao
@@ -116,82 +85,37 @@ public class MyBatisNativeConfiguration {
         @Override
         public void registerHints(RuntimeHints hints, ClassLoader classLoader) {
             Stream.of(RawLanguageDriver.class,
-                            // TODO 增加了MybatisXMLLanguageDriver.class
-                            XMLLanguageDriver.class,
-                            MybatisXMLLanguageDriver.class,
-                            RuntimeSupport.class,
-                            ProxyFactory.class,
-                            Slf4jImpl.class,
-                            Log.class,
-                            JakartaCommonsLoggingImpl.class,
-                            Log4j2Impl.class,
-                            Jdk14LoggingImpl.class,
-                            StdOutImpl.class,
-                            NoLoggingImpl.class,
-                            SqlSessionFactory.class,
-                            PerpetualCache.class,
-                            FifoCache.class,
-                            LruCache.class,
-                            SoftCache.class,
-                            WeakCache.class,
-                            //TODO 增加了MybatisSqlSessionFactoryBean.class
-                            SqlSessionFactoryBean.class,
-                            MybatisSqlSessionFactoryBean.class)
-                    .forEach(x -> hints.reflection().registerType(x, MemberCategory.values()));
-            Stream.of("org/apache/ibatis/builder/xml/*.dtd",
-                            "org/apache/ibatis/builder/xml/*.xsd")
-                    .forEach(hints.resources()::registerPattern);
-
-            hints.serialization().registerType(SerializedLambda.class);
-            hints.serialization().registerType(SFunction.class);
-            hints.serialization().registerType(java.lang.invoke.SerializedLambda.class);
-            hints.serialization().registerType(AbstractLambdaWrapper.class);
-            hints.serialization().registerType(NormalSegmentList.class);
-            hints.serialization().registerType(AbstractISegmentList.class);
-            hints.serialization().registerType(MergeSegments.class);
-            hints.serialization().registerType(MybatisMapperProxy.class);
-
-            hints.reflection().registerType(SFunction.class);
-            hints.reflection().registerType(SerializedLambda.class);
-            hints.reflection().registerType(java.lang.invoke.SerializedLambda.class);
-            hints.reflection().registerType(AbstractLambdaWrapper.class);
-            hints.reflection().registerType(NormalSegmentList.class);
-            hints.reflection().registerType(AbstractISegmentList.class);
-            hints.reflection().registerType(MergeSegments.class);
-            hints.reflection().registerType(MybatisMapperMethod.class);
-            hints.reflection().registerType(LambdaUtils.class);
-            hints.reflection().registerType(MybatisMapperProxy.class);
-
-            hints.proxies().registerJdkProxy(StatementHandler.class);
-            hints.proxies().registerJdkProxy(Executor.class);
-            hints.proxies().registerJdkProxy(ResultSetHandler.class);
-            hints.proxies().registerJdkProxy(ParameterHandler.class);
-
-            //        hints.reflection().registerType(MybatisPlusInterceptor.class);
-            hints.reflection().registerType(AbstractWrapper.class, MemberCategory.values());
-            hints.reflection().registerType(AbstractLambdaWrapper.class, MemberCategory.values());
-            hints.reflection().registerType(LambdaQueryWrapper.class, MemberCategory.values());
-            hints.reflection().registerType(LambdaUpdateWrapper.class, MemberCategory.values());
-            hints.reflection().registerType(UpdateWrapper.class, MemberCategory.values());
-            hints.reflection().registerType(QueryWrapper.class, MemberCategory.values());
-
-            hints.reflection().registerType(BoundSql.class, MemberCategory.DECLARED_FIELDS);
-            hints.reflection().registerType(RoutingStatementHandler.class, MemberCategory.DECLARED_FIELDS);
-            hints.reflection().registerType(BaseStatementHandler.class, MemberCategory.DECLARED_FIELDS);
-            hints.reflection().registerType(MybatisParameterHandler.class, MemberCategory.DECLARED_FIELDS);
-
-
-            hints.reflection().registerType(IEnum.class, MemberCategory.INVOKE_PUBLIC_METHODS);
-            // register typeHandler
-            hints.reflection().registerType(CompositeEnumTypeHandler.class, MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
-            hints.reflection().registerType(FastjsonTypeHandler.class, MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
-            hints.reflection().registerType(GsonTypeHandler.class, MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
-            hints.reflection().registerType(JacksonTypeHandler.class, MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
-            hints.reflection().registerType(MybatisEnumTypeHandler.class, MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS);
+                    XMLLanguageDriver.class,
+                    RuntimeSupport.class,
+                    ProxyFactory.class,
+                    Slf4jImpl.class,
+                    Log.class,
+                    JakartaCommonsLoggingImpl.class,
+                    Log4j2Impl.class,
+                    Jdk14LoggingImpl.class,
+                    StdOutImpl.class,
+                    NoLoggingImpl.class,
+                    SqlSessionFactory.class,
+                    PerpetualCache.class,
+                    FifoCache.class,
+                    LruCache.class,
+                    SoftCache.class,
+                    WeakCache.class,
+                    SqlSessionFactoryBean.class,
+                    ArrayList.class,
+                    HashMap.class,
+                    TreeSet.class,
+                    HashSet.class
+            ).forEach(x -> hints.reflection().registerType(x, MemberCategory.values()));
+            Stream.of(
+                    "org/apache/ibatis/builder/xml/.*.dtd",
+                    "org/apache/ibatis/builder/xml/.*.xsd"
+            ).forEach(hints.resources()::registerPattern);
         }
     }
 
-    static class MyBatisBeanFactoryInitializationAotProcessor implements BeanFactoryInitializationAotProcessor, BeanRegistrationExcludeFilter {
+    static class MyBatisBeanFactoryInitializationAotProcessor
+            implements BeanFactoryInitializationAotProcessor, BeanRegistrationExcludeFilter {
 
         private final Set<Class<?>> excludeClasses = new HashSet<>();
 
@@ -199,8 +123,7 @@ public class MyBatisNativeConfiguration {
             excludeClasses.add(MapperScannerConfigurer.class);
         }
 
-        @Override
-        public boolean isExcludedFromAotProcessing(RegisteredBean registeredBean) {
+        @Override public boolean isExcludedFromAotProcessing(RegisteredBean registeredBean) {
             return excludeClasses.contains(registeredBean.getBeanClass());
         }
 
@@ -220,7 +143,8 @@ public class MyBatisNativeConfiguration {
                         if (mapperInterfaceType != null) {
                             registerReflectionTypeIfNecessary(mapperInterfaceType, hints);
                             hints.proxies().registerJdkProxy(mapperInterfaceType);
-                            hints.resources().registerPattern(mapperInterfaceType.getName().replace('.', '/').concat(".xml"));
+                            hints.resources()
+                                    .registerPattern(mapperInterfaceType.getName().replace('.', '/').concat(".xml"));
                             registerMapperRelationships(mapperInterfaceType, hints);
                         }
                     }
@@ -239,13 +163,15 @@ public class MyBatisNativeConfiguration {
                     registerSqlProviderTypes(method, hints, DeleteProvider.class, DeleteProvider::value, DeleteProvider::type);
                     Class<?> returnType = MyBatisMapperTypeUtils.resolveReturnClass(mapperInterfaceType, method);
                     registerReflectionTypeIfNecessary(returnType, hints);
-                    MyBatisMapperTypeUtils.resolveParameterClasses(mapperInterfaceType, method).forEach(x -> registerReflectionTypeIfNecessary(x, hints));
+                    MyBatisMapperTypeUtils.resolveParameterClasses(mapperInterfaceType, method)
+                            .forEach(x -> registerReflectionTypeIfNecessary(x, hints));
                 }
             }
         }
 
         @SafeVarargs
-        private <T extends Annotation> void registerSqlProviderTypes(Method method, RuntimeHints hints, Class<T> annotationType, Function<T, Class<?>>... providerTypeResolvers) {
+        private <T extends Annotation> void registerSqlProviderTypes(
+                Method method, RuntimeHints hints, Class<T> annotationType, Function<T, Class<?>>... providerTypeResolvers) {
             for (T annotation : method.getAnnotationsByType(annotationType)) {
                 for (Function<T, Class<?>> providerTypeResolver : providerTypeResolvers) {
                     registerReflectionTypeIfNecessary(providerTypeResolver.apply(annotation), hints);
@@ -272,7 +198,8 @@ public class MyBatisNativeConfiguration {
         }
 
         static Set<Class<?>> resolveParameterClasses(Class<?> mapperInterface, Method method) {
-            return Stream.of(TypeParameterResolver.resolveParamTypes(method, mapperInterface)).map(x -> typeToClass(x, x instanceof Class ? (Class<?>) x : Object.class)).collect(Collectors.toSet());
+            return Stream.of(TypeParameterResolver.resolveParamTypes(method, mapperInterface))
+                    .map(x -> typeToClass(x, x instanceof Class ? (Class<?>) x : Object.class)).collect(Collectors.toSet());
         }
 
         private static Class<?> typeToClass(Type src, Class<?> fallback) {
@@ -285,7 +212,9 @@ public class MyBatisNativeConfiguration {
                 }
             } else if (src instanceof ParameterizedType) {
                 ParameterizedType parameterizedType = (ParameterizedType) src;
-                int index = (parameterizedType.getRawType() instanceof Class && Map.class.isAssignableFrom((Class<?>) parameterizedType.getRawType()) && parameterizedType.getActualTypeArguments().length > 1) ? 1 : 0;
+                int index = (parameterizedType.getRawType() instanceof Class
+                        && Map.class.isAssignableFrom((Class<?>) parameterizedType.getRawType())
+                        && parameterizedType.getActualTypeArguments().length > 1) ? 1 : 0;
                 Type actualType = parameterizedType.getActualTypeArguments()[index];
                 result = typeToClass(actualType, fallback);
             }
@@ -299,7 +228,8 @@ public class MyBatisNativeConfiguration {
 
     static class MyBatisMapperFactoryBeanPostProcessor implements MergedBeanDefinitionPostProcessor, BeanFactoryAware {
 
-        private static final org.apache.commons.logging.Log LOG = LogFactory.getLog(MyBatisMapperFactoryBeanPostProcessor.class);
+        private static final org.apache.commons.logging.Log LOG = LogFactory.getLog(
+                MyBatisMapperFactoryBeanPostProcessor.class);
 
         private static final String MAPPER_FACTORY_BEAN = "org.mybatis.spring.mapper.MapperFactoryBean";
 
@@ -325,10 +255,8 @@ public class MyBatisNativeConfiguration {
                 Class<?> mapperInterface = getMapperInterface(beanDefinition);
                 if (mapperInterface != null) {
                     // Exposes a generic type information to context for prevent early initializing
-                    ConstructorArgumentValues constructorArgumentValues = new ConstructorArgumentValues();
-                    constructorArgumentValues.addGenericArgumentValue(mapperInterface);
-                    beanDefinition.setConstructorArgumentValues(constructorArgumentValues);
-                    beanDefinition.setTargetType(ResolvableType.forClassWithGenerics(beanDefinition.getBeanClass(), mapperInterface));
+                    beanDefinition
+                            .setTargetType(ResolvableType.forClassWithGenerics(beanDefinition.getBeanClass(), mapperInterface));
                 }
             }
         }
@@ -336,10 +264,12 @@ public class MyBatisNativeConfiguration {
         private Class<?> getMapperInterface(RootBeanDefinition beanDefinition) {
             try {
                 return (Class<?>) beanDefinition.getPropertyValues().get("mapperInterface");
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 LOG.debug("Fail getting mapper interface type.", e);
                 return null;
             }
         }
+
     }
 }

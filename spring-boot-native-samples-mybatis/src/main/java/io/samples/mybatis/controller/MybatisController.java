@@ -1,13 +1,14 @@
 package io.samples.mybatis.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 import io.samples.mybatis.entity.Author;
 import io.samples.mybatis.repo.AuthorMapper;
@@ -24,13 +25,14 @@ public class MybatisController {
     @Autowired
     AuthorMapper authorMapper;
 
-    @GetMapping("/find")
-    public List<Author> find() {
-        QueryWrapper<Author> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(Author::getName, "abc");
-        List<Author> authors = authorMapper.selectList(queryWrapper);
-        log.info("find author:{}", authors);
-        return authors;
+    @GetMapping("/count")
+    public Map<String, Integer> count() {
+        Integer count = authorMapper.count();
+        log.info("count:{}", count);
+
+        Map<String, Integer> result = new HashMap<>();
+        result.put("count", count);
+        return result;
     }
 
 }

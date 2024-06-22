@@ -29,7 +29,6 @@ public class AuthorRepoTest {
     void insertAuthors() {
         Author author = new Author();
         author.setName("abc");
-        authorMapper.insert(author);
         System.out.printf("insertAuthors, author:{} ", author);
     }
 

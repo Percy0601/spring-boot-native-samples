@@ -1,8 +1,9 @@
 package io.samples.mybatis.repo;
 
-import org.apache.ibatis.annotations.Mapper;
+import java.util.List;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import io.samples.mybatis.entity.Author;
 
@@ -11,5 +12,8 @@ import io.samples.mybatis.entity.Author;
  * @date: 2024/6/22
  */
 @Mapper
-public interface AuthorMapper extends BaseMapper<Author> {
+public interface AuthorMapper {
+
+    Integer count();
+
 }

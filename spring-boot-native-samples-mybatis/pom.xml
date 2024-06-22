@@ -15,8 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mybatis-plus.version>3.5.7</mybatis-plus.version>
-        <graal-sdk.version>24.0.1</graal-sdk.version>
+        <mybatis.version>3.0.3</mybatis.version>
     </properties>
 
     <dependencies>
@@ -25,25 +24,16 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jdbc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.graalvm.sdk</groupId>
-            <artifactId>graal-sdk</artifactId>
-            <version>${graal-sdk.version}</version>
-            <scope>provided</scope>
-        </dependency>
+
     </dependencies>
 
     <profiles>
@@ -82,7 +72,6 @@
                             <requiredVersion>22.3</requiredVersion>
                             <buildArgs combine.children="append">
                                 <buildArg>--enable-url-protocols=http</buildArg>
-                                <buildArg>--features=io.samples.mybatis.graalvm.LambdaRegistrationFeature</buildArg>
                             </buildArgs>
                         </configuration>
                         <executions>
