@@ -15,7 +15,6 @@
         <module>spring-boot-native-samples-redis</module>
         <module>spring-boot-native-samples-web-actuator</module>
         <module>spring-boot-native-samples-jdbc-h2database</module>
-        <module>spring-boot-native-samples-mybatis</module>
     </modules>
 
     <parent>
