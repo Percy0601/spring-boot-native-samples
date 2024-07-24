@@ -78,14 +78,7 @@
                                 <buildArg>--enable-url-protocols=http</buildArg> <!-- ★★★Need to specify★★★ -->
                             </buildArgs>
                         </configuration>
-                        <executions>
-                            <execution>
-                                <id>add-reachability-metadata</id>
-                                <goals>
-                                    <goal>add-reachability-metadata</goal>
-                                </goals>
-                            </execution>
-                        </executions>
+
                     </plugin>
                 </plugins>
             </build>
@@ -121,6 +114,9 @@
                             <metadataRepository>
                                 <enabled>true</enabled>
                             </metadataRepository>
+                            <buildArgs combine.children="append">
+                                <buildArg>--enable-url-protocols=http</buildArg> <!-- ★★★Need to specify★★★ -->
+                            </buildArgs>
                             <!--                            <requiredVersion>22.3</requiredVersion>-->
                         </configuration>
                         <executions>
