@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.samples.mybatis.entity.Author;
 import io.samples.mybatis.entity.Book;
 import io.samples.mybatis.mapper.BookMapper;
 import io.samples.mybatis.repo.AuthorRepository;
+import io.samples.mybatis.vo.BookVO;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -39,4 +41,10 @@ public class MybatisController {
         return books;
     }
 
+    @GetMapping("/find-book-id")
+    public BookVO findBookById(@RequestParam Long id) {
+        BookVO book = bookMapper.selectById(id);
+        log.info("find book id:{}, book: {}", id, book);
+        return book;
+    }
 }
