@@ -38,6 +38,7 @@ import org.springframework.beans.factory.aot.BeanRegistrationExcludeFilter;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcessor;
 import org.springframework.beans.factory.support.RegisteredBean;
 import org.springframework.beans.factory.support.RootBeanDefinition;
@@ -251,8 +252,15 @@ public class MyBatisNativeConfiguration {
                 Class<?> mapperInterface = getMapperInterface(beanDefinition);
                 if (mapperInterface != null) {
                     // Exposes a generic type information to context for prevent early initializing
-                    beanDefinition
-                            .setTargetType(ResolvableType.forClassWithGenerics(beanDefinition.getBeanClass(), mapperInterface));
+                    // support spring-boot version 3.1.x
+//                    beanDefinition
+//                            .setTargetType(ResolvableType.forClassWithGenerics(beanDefinition.getBeanClass(), mapperInterface));
+                    // support spring-boot version 3.2.x+
+                    ConstructorArgumentValues constructorArgumentValues = new ConstructorArgumentValues();
+                    constructorArgumentValues.addGenericArgumentValue(mapperInterface);
+                    beanDefinition.setConstructorArgumentValues(constructorArgumentValues);
+                    beanDefinition.setConstructorArgumentValues(constructorArgumentValues);
+                    beanDefinition.setTargetType(ResolvableType.forClassWithGenerics(beanDefinition.getBeanClass(), mapperInterface));
                 }
             }
         }
