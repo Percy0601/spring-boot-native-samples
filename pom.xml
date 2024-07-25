@@ -16,6 +16,7 @@
         <module>spring-boot-native-samples-web-actuator</module>
         <module>spring-boot-native-samples-jdbc-h2database</module>
         <module>spring-boot-native-samples-mybatis</module>
+        <module>spring-boot-native-samples-rocketmq</module>
     </modules>
 
     <parent>
