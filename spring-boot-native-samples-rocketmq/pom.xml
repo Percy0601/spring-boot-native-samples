@@ -66,6 +66,7 @@
                             </metadataRepository>
                             <requiredVersion>22.3</requiredVersion>
                             <buildArgs combine.children="append">
+                                <buildArg>--initialize-at-build-time=org.apache.commons.logging.LogFactoryService</buildArg>
                                 <buildArg>--enable-url-protocols=http</buildArg> <!-- ★★★Need to specify★★★ -->
                             </buildArgs>
                         </configuration>
