@@ -12,6 +12,7 @@ import io.samples.mybatis.entity.Author;
 import io.samples.mybatis.entity.Book;
 import io.samples.mybatis.mapper.BookMapper;
 import io.samples.mybatis.repo.AuthorRepository;
+import io.samples.mybatis.repo.BookRepository;
 import io.samples.mybatis.vo.BookVO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,6 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 public class MybatisController {
     @Autowired
     AuthorRepository authorRepository;
+    @Autowired
+    BookRepository bookRepository;
     @Autowired
     BookMapper bookMapper;
     @GetMapping("/findAll")
@@ -46,5 +49,13 @@ public class MybatisController {
         BookVO book = bookMapper.selectById(id);
         log.info("find book id:{}, book: {}", id, book);
         return book;
+    }
+
+    @GetMapping("/create-book")
+    public Long createBook(@RequestParam String title) {
+        Book book = new Book();
+        book.setTitle(title);
+        bookRepository.save(book);
+        return book.getId();
     }
 }

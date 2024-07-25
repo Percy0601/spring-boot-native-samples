@@ -21,7 +21,16 @@ runtime using xml:
     mybatis-native-sample -Djavax.xml.accessExternalDTD=all
 ```
 
+### Repository
+./h2
 
+### Url
+#### Create
+http://localhost:8080/mybatis/create-book?title=java-test03
 
+#### Find-All
+http://localhost:8080/mybatis/find-all-book
 
+#### Find-One
+http://localhost:8080/mybatis/find-book-id?id=1
 

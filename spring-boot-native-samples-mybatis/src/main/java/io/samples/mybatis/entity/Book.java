@@ -11,13 +11,7 @@ import org.springframework.data.annotation.Id;
 public class Book {
     @Id
     private Long id;
-
     private String title;
-
-    public Book(Long id, String title) {
-        this.id = id;
-        this.title = title;
-    }
 
     public Long getId() {
         return id;

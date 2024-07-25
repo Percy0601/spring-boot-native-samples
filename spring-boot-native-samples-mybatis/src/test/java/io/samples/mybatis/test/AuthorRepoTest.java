@@ -1,7 +1,6 @@
 package io.samples.mybatis.test;
 
 import java.util.List;
-import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,6 @@ public class AuthorRepoTest {
     @Test
     void test() {
         log.info("=================={}", (null == authorRepository));
-        insertAuthors();
     }
 
     private void deleteAll() {
@@ -67,16 +65,6 @@ public class AuthorRepoTest {
                 System.out.printf("\t%s%n", book);
             }
         }
-    }
-
-    private void insertAuthors() {
-        Author author1 = this.authorRepository.save(new Author(null, "Josh Long",
-                Set.of(new Book(null, "Reactive Spring"), new Book(null, "Cloud Native Java"))));
-        Author author2 = this.authorRepository.save(
-                new Author(null, "Martin Kleppmann", Set.of(new Book(null, "Designing Data Intensive Applications"))));
-
-        System.out.printf("insertAuthors(): author1 = %s%n", author1);
-        System.out.printf("insertAuthors(): author2 = %s%n", author2);
     }
 
 
