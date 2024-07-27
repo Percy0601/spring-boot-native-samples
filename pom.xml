@@ -17,6 +17,7 @@
         <module>spring-boot-native-samples-jdbc-h2database</module>
         <module>spring-boot-native-samples-mybatis</module>
         <module>spring-boot-native-samples-rocketmq</module>
+        <module>spring-boot-native-samples-html</module>
     </modules>
 
     <parent>
