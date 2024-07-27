@@ -21,6 +21,7 @@ mvn clean -DskipTests=true -Pnative native:compile
 ## spring-boot-native-samples-web
 Basic Spring Boot Web
 
+http://localhost:8080/web/hello?name=Percy
 
 ## Summary
 当前Java开发者众多，但是由于Java服务一直面向于长期运行，启动速度慢，占用内存大，每个Pod或者虚拟机都需要安装JDK, 不太适合云原生时代。

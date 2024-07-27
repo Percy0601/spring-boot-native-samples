@@ -18,9 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 public class WebController {
 
     @GetMapping("/hello")
-    public String hello() {
-        log.info("hello world!");
-        return "Hello World!";
+    public String hello(String name) {
+        log.info("hello world, {}", name);
+        return "Hello World, ".concat(name).concat("!");
     }
 
     @GetMapping("/test-rest-template")
