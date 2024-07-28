@@ -20,4 +20,10 @@ public class FreemarkerController {
         return "index";
     }
 
+    @RequestMapping("/format")
+    public String format2(Model model){
+        model.addAttribute("welcome","Hello Some!");
+        return "some";
+    }
+
 }

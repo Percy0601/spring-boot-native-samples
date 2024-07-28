@@ -7,8 +7,8 @@ import java.io.Writer;
 import java.util.Map;
 import java.util.Objects;
 
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.util.ClassUtils;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -39,19 +39,17 @@ public class FreemarkerUtil {
     }
 
     private void init() {
-        resource = new ClassPathResource("templates/");
         configuration = new Configuration(Configuration.getVersion());
+        configuration.setClassLoaderForTemplateLoading(ClassUtils.getDefaultClassLoader(), "templates");
+        configuration.setDefaultEncoding("utf-8");
     }
 
     public String format(String templateName, Map<String, Object> params) {
         try {
-            configuration.setDirectoryForTemplateLoading(resource.getFile());
-            configuration.setDefaultEncoding("utf-8");
             Template template = configuration.getTemplate(templateName);
             Writer out = new StringWriter();
             template.process(params, out);
             String result = out.toString();
-            log.info("========={}", result);
             out.close();
             return result;
         } catch (IOException e) {
