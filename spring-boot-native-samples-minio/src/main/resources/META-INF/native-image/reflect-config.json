@@ -38,5 +38,15 @@
         "parameterTypes": []
       }
     ]
+  },
+  {
+    "name": "io.minio.messages.LocationConstraint",
+    "allDeclaredFields": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
   }
 ]
