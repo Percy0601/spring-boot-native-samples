@@ -19,6 +19,7 @@
         <module>spring-boot-native-samples-rocketmq</module>
         <module>spring-boot-native-samples-html</module>
         <module>spring-boot-native-samples-freemarker</module>
+        <module>spring-boot-native-samples-kafka</module>
     </modules>
 
     <parent>
