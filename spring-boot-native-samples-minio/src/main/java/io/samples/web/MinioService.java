@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class MinioService {
 
-    @Value("${minio.host:http://192.168.1.16:9000}")
+    @Value("${minio.host:http://127.0.0.1:9000}")
     private String endpoint;
     @Value("${minio.access:minioadmin}")
     private String access;
