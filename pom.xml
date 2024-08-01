@@ -21,6 +21,7 @@
         <module>spring-boot-native-samples-freemarker</module>
         <module>spring-boot-native-samples-kafka</module>
         <module>spring-boot-native-samples-minio</module>
+        <module>spring-boot-native-samples-cola-statemachine</module>
     </modules>
 
     <parent>
