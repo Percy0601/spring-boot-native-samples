@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spring-boot-native-samples-spring-statemachine</artifactId>
+    <artifactId>spring-boot-native-samples-statemachine</artifactId>
     <properties>
         <java.version>17</java.version>
         <native-build-tools-plugin.version>0.9.28</native-build-tools-plugin.version>
