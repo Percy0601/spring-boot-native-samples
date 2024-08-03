@@ -23,6 +23,7 @@
         <module>spring-boot-native-samples-minio</module>
         <module>spring-boot-native-samples-cola-statemachine</module>
         <module>spring-boot-native-samples-statemachine</module>
+        <module>spring-boot-native-samples-statemachine-persist</module>
     </modules>
 
     <parent>
