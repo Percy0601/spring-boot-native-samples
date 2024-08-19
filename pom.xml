@@ -24,6 +24,7 @@
         <module>spring-boot-native-samples-cola-statemachine</module>
         <module>spring-boot-native-samples-statemachine</module>
         <module>spring-boot-native-samples-statemachine-persist</module>
+        <module>spring-boot-native-samples-cache</module>
     </modules>
 
     <parent>
