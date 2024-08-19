@@ -24,12 +24,13 @@
         <module>spring-boot-native-samples-cola-statemachine</module>
         <module>spring-boot-native-samples-statemachine</module>
         <module>spring-boot-native-samples-statemachine-persist</module>
+        <module>spring-boot-native-samples-cache</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.1</version>
+        <version>3.3.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
