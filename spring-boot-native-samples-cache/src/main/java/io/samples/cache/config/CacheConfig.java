@@ -17,19 +17,14 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  */
 @Configuration
 public class CacheConfig {
-    @Autowired
-    private CacheProperties cacheProperties;
-
     @Bean
     public RedisCacheManager redisCacheManager(LettuceConnectionFactory connectionFactory) {
 
         GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer();
         StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(cacheProperties.getRedis().getTimeToLive())
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(stringRedisSerializer))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(genericJackson2JsonRedisSerializer));
-
         return RedisCacheManager.builder(connectionFactory)
                 .cacheDefaults(config).build();
     }
