@@ -1,5 +1,6 @@
 package io.samples.cache;
 
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,10 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Service
+@CacheConfig(cacheNames = "some-key")
 public class SomeService {
 
-    @Cacheable(key="#name")
+    @Cacheable
     public String trainingCache(String name) {
         log.info("training-cache, name: {}", name);
 

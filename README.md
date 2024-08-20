@@ -18,6 +18,19 @@ mvn clean -DskipTests=true -Pnative native:compile
 ```
 ./xxx -Xms50m -Xmx50m -Xmn50m
 ```
+
+配置文件：
+```
+--spring.config.additional-location="D:/xxx/system.properties"
+--spring.config.location="D:/xxx/system.properties"
+```
+
+替换配置参数
+
+```
+./xxx --server.port=8081
+```
+
 ## spring-boot-native-samples-web
 Basic Spring Boot Web
 
