@@ -1,14 +1,8 @@
 ### Html 
 Access Html
 ```
-  # public/index.html
-  http://localhost:8080/ 
+http://localhost:8080/caffeine/user?username=gfg
 
-  # resoures/r.html
-  http://localhost:8080/r.html
-  
-  # static/static.html
-  http://localhost:8080/static.html
 ```
 
 
