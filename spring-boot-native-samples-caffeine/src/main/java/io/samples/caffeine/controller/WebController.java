@@ -45,6 +45,7 @@ public class WebController {
     public User user(@RequestParam(name = "username") String username) {
         User user = new User();
         user.setName(username);
+        log.info("===================web-controller-user: {}", username);
         return user;
     }
 
