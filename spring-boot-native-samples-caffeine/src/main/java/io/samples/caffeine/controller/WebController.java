@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/caffeine")
 public class WebController {
 
-    @Resource(name = "localCacheManager")
+    @Resource(name = "customCacheManager")
     CacheManager cacheManager;
 
     @GetMapping("/hello")
@@ -40,10 +41,10 @@ public class WebController {
     }
 
     @GetMapping("/user")
-    @Cacheable(cacheManager = "localCacheManager")
-    public User user(String userName) {
+    @Cacheable(cacheManager = "customCacheManager", value = "customCache", key = "#username")
+    public User user(@RequestParam(name = "username") String username) {
         User user = new User();
-        user.setName(userName);
+        user.setName(username);
         return user;
     }
 
