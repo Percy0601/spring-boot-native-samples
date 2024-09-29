@@ -26,6 +26,7 @@
         <module>spring-boot-native-samples-statemachine-persist</module>
         <module>spring-boot-native-samples-cache</module>
         <module>spring-boot-native-samples-caffeine</module>
+        <module>spring-boot-native-samples-spi</module>
     </modules>
 
     <parent>
