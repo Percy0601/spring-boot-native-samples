@@ -27,6 +27,7 @@
         <module>spring-boot-native-samples-cache</module>
         <module>spring-boot-native-samples-caffeine</module>
         <module>spring-boot-native-samples-spi</module>
+        <module>spring-boot-native-samples-jsonpath</module>
     </modules>
 
     <parent>
