@@ -1,14 +1,11 @@
 package io.samples.registry.controller;
 
 import java.lang.management.ManagementFactory;
-import java.lang.management.OperatingSystemMXBean;
 import java.lang.management.RuntimeMXBean;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @RestController
-@RequestMapping("/web")
-public class WebController {
+@RequestMapping("/registry")
+public class RegistryController {
 
     @GetMapping("/hello")
     public String hello(String name) {
@@ -46,11 +43,4 @@ public class WebController {
                 .concat("!");
     }
 
-    @GetMapping("/test-rest-template")
-    public String testRestTemplate() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://www.baidu.com", String.class);
-        log.info("=================status:{}, content:{}", responseEntity.getStatusCode(), responseEntity.getBody());
-        return responseEntity.getBody();
-    }
 }
