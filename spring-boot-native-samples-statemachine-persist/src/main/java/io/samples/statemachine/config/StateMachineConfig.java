@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 @EnableStateMachine
-public class StateMachineConfig extends EnumStateMachineConfigurerAdapter<String, String> {
+public class StateMachineConfig extends EnumStateMachineConfigurerAdapter<States, Events> {
 
 
     @Bean
@@ -43,30 +43,25 @@ public class StateMachineConfig extends EnumStateMachineConfigurerAdapter<String
     }
 
     @Override
-    public void configure(StateMachineStateConfigurer<String, String> states)
+    public void configure(StateMachineStateConfigurer<States, Events> states)
             throws Exception {
         states
                 .withStates()
-                .initial("PLACED")
-                .state("PROCESSING")
-                .state("SENT")
-                .state("DELIVERED");
+                .initial(States.SI)
+                .states(EnumSet.allOf(States.class));
     }
 
     @Override
-    public void configure(StateMachineTransitionConfigurer<String, String> transitions) throws Exception {
-        transitions
-                .withExternal()
-                .source("PLACED").target("PROCESSING")
-                .event("PROCESS")
-                .and()
-                .withExternal()
-                .source("PROCESSING").target("SENT")
-                .event("SEND")
-                .and()
-                .withExternal()
-                .source("SENT").target("DELIVERED")
-                .event("DELIVER");
+    public void configure(StateMachineTransitionConfigurer<States, Events> transitions) throws Exception {
+        transitions.withExternal()
+                .source(States.SI)
+                .target(States.S1)
+                .event(Events.E1)
+
+                .and().withExternal()
+                .source(States.S1)
+                .target(States.S2)
+                .event(Events.E2);
     }
     //end::snippetA[]
 
