@@ -1,12 +1,18 @@
 package io.samples.registry.controller;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
+import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.samples.registry.bean.MyBean;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -18,29 +24,31 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/registry")
 public class RegistryController {
 
+    @Autowired
+    ConfigurableApplicationContext context;
+
     @GetMapping("/hello")
     public String hello(String name) {
         log.info("hello world, {}", name);
         return "Hello World, ".concat(name).concat("!");
     }
 
-    @GetMapping("/jvm")
-    public String jvm() {
-        RuntimeMXBean runtime = ManagementFactory.getRuntimeMXBean();
-        //OperatingSystemMXBean os = ManagementFactory.getOperatingSystemMXBean();
+    @GetMapping("/context")
+    public String context() {
+        Boolean status = (context == null);
 
-        String name = runtime.getVmName();
-        String vendor = runtime.getVmVendor();
-        String version = runtime.getVmVersion();
-        // native: Substrate VM
-        log.info("jvm info: name:{}, vendor:{}, version:{}", name, vendor, version);
-        return "jvm info, name: "
-                .concat(name)
-                .concat("; vendor: ")
-                .concat(vendor)
-                .concat("; version: ")
-                .concat(version)
-                .concat("!");
+        if(!context.containsBean("myBean")) {
+            BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(MyBean.class);
+            beanDefinitionBuilder.addPropertyValue("date", new Date());
+            BeanDefinition beanDefinition = beanDefinitionBuilder.getRawBeanDefinition();
+
+            BeanDefinitionRegistry beanFactory = (BeanDefinitionRegistry) context.getBeanFactory();
+            beanFactory.registerBeanDefinition("myBean", beanDefinition);
+        }
+
+        MyBean myBean = context.getBean(MyBean.class);
+        return myBean.doSomething();
     }
+
 
 }
