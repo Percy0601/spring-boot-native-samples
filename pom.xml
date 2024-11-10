@@ -30,6 +30,7 @@
         <module>spring-boot-native-samples-jsonpath</module>
         <module>spring-boot-native-samples-polymorphism</module>
         <module>spring-boot-native-samples-registry-bean</module>
+        <module>spring-boot-native-samples-advanced</module>
     </modules>
 
     <parent>
