@@ -1,5 +1,5 @@
-2024-07-27 22:22:06.756 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 13372 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:22:06.766 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:22:06.756 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 13372 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:22:06.766 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:22:09.341 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:22:09.361 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:22:09.369 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -9,12 +9,12 @@
 2024-07-27 22:22:09.674 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page: class path resource [public/index.html]
 2024-07-27 22:22:10.227 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:22:10.293 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:22:10.311 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarted - Started HtmlBootstrap in 5.098 seconds (process running for 6.557)
+2024-07-27 22:22:10.311 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarted - Started HtmlBootstrap in 5.098 seconds (process running for 6.557)
 2024-07-27 22:22:12.409 [appName_IS_UNDEFINED] [http-nio-8080-exec-3] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 22:22:12.409 [appName_IS_UNDEFINED] [http-nio-8080-exec-3] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 22:22:12.412 [appName_IS_UNDEFINED] [http-nio-8080-exec-3] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
-2024-07-27 22:36:49.905 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 12432 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:36:49.910 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:36:49.905 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 12432 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:36:49.910 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:36:51.308 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:36:51.323 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:36:51.326 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -24,12 +24,12 @@
 2024-07-27 22:36:51.580 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page: class path resource [public/index.html]
 2024-07-27 22:36:51.873 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:36:51.906 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:36:51.916 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarted - Started HtmlBootstrap in 3.059 seconds (process running for 3.822)
+2024-07-27 22:36:51.916 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarted - Started HtmlBootstrap in 3.059 seconds (process running for 3.822)
 2024-07-27 22:37:09.761 [appName_IS_UNDEFINED] [http-nio-8080-exec-2] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 22:37:09.762 [appName_IS_UNDEFINED] [http-nio-8080-exec-2] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 22:37:09.765 [appName_IS_UNDEFINED] [http-nio-8080-exec-2] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 3 ms
-2024-07-27 22:39:17.085 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 8764 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:39:17.089 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:39:17.085 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 8764 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:39:17.089 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:39:18.405 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:39:18.421 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:39:18.425 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -39,9 +39,9 @@
 2024-07-27 22:39:18.735 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page: class path resource [public/index.html]
 2024-07-27 22:39:19.017 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:39:19.056 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:39:19.066 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarted - Started HtmlBootstrap in 2.987 seconds (process running for 3.675)
-2024-07-27 22:39:41.694 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 8716 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:39:41.699 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:39:19.066 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarted - Started HtmlBootstrap in 2.987 seconds (process running for 3.675)
+2024-07-27 22:39:41.694 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarting - Starting HtmlBootstrap using Java 21.0.2 with PID 8716 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-html\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:39:41.699 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:39:43.093 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:39:43.110 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:39:43.114 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -51,12 +51,12 @@
 2024-07-27 22:39:43.330 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page: class path resource [public/index.html]
 2024-07-27 22:39:43.607 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:39:43.639 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:39:43.649 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.HtmlBootstrap.logStarted - Started HtmlBootstrap in 2.995 seconds (process running for 3.718)
+2024-07-27 22:39:43.649 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.HtmlBootstrap.logStarted - Started HtmlBootstrap in 2.995 seconds (process running for 3.718)
 2024-07-27 22:39:44.974 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 22:39:44.976 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 22:39:44.976 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
-2024-07-27 22:49:19.385 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 3200 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:49:19.385 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:49:19.385 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 3200 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:49:19.385 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:49:20.947 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:49:20.964 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:49:20.968 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -65,7 +65,7 @@
 2024-07-27 22:49:21.065 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1580 ms
 2024-07-27 22:49:21.755 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:49:21.795 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:49:21.806 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.489 seconds (process running for 4.253)
+2024-07-27 22:49:21.806 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.489 seconds (process running for 4.253)
 2024-07-27 22:49:29.875 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 22:49:29.875 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 22:49:29.875 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
@@ -116,8 +116,8 @@ jakarta.servlet.ServletException: Circular view path [index]: would dispatch bac
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-07-27 22:51:54.108 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 13292 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:51:54.112 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:51:54.108 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 13292 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:51:54.112 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:51:55.695 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:51:55.712 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:51:55.715 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -126,12 +126,12 @@ jakarta.servlet.ServletException: Circular view path [index]: would dispatch bac
 2024-07-27 22:51:55.814 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1608 ms
 2024-07-27 22:51:56.568 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:51:56.618 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:51:56.638 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.756 seconds (process running for 4.429)
+2024-07-27 22:51:56.638 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.756 seconds (process running for 4.429)
 2024-07-27 22:52:03.086 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 22:52:03.086 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 22:52:03.087 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
-2024-07-27 22:53:25.038 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 9288 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 22:53:25.042 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 22:53:25.038 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 9288 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 22:53:25.042 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 22:53:26.832 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 22:53:26.850 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:53:26.856 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -141,12 +141,12 @@ jakarta.servlet.ServletException: Circular view path [index]: would dispatch bac
 2024-07-27 22:53:27.167 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
 2024-07-27 22:53:27.555 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 22:53:27.587 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 22:53:27.597 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.65 seconds (process running for 4.42)
+2024-07-27 22:53:27.597 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.65 seconds (process running for 4.42)
 2024-07-27 22:53:27.862 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 22:53:27.863 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 22:53:27.864 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
-2024-07-27 23:17:13.078 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 10836 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 23:17:13.082 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 23:17:13.078 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 10836 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 23:17:13.082 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 23:17:14.383 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 23:17:14.397 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 23:17:14.400 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -156,9 +156,9 @@ jakarta.servlet.ServletException: Circular view path [index]: would dispatch bac
 2024-07-27 23:17:14.629 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
 2024-07-27 23:17:15.190 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 23:17:15.218 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 23:17:15.228 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.014 seconds (process running for 3.711)
-2024-07-27 23:17:26.397 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 11880 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 23:17:26.401 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 23:17:15.228 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.014 seconds (process running for 3.711)
+2024-07-27 23:17:26.397 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 11880 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 23:17:26.401 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 23:17:27.822 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 23:17:27.837 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 23:17:27.840 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -168,7 +168,7 @@ jakarta.servlet.ServletException: Circular view path [index]: would dispatch bac
 2024-07-27 23:17:28.054 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
 2024-07-27 23:17:28.580 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 23:17:28.613 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 23:17:28.624 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.244 seconds (process running for 4.121)
+2024-07-27 23:17:28.624 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.244 seconds (process running for 4.121)
 2024-07-27 23:17:30.916 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 23:17:30.917 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 23:17:30.919 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
@@ -178,8 +178,8 @@ jakarta.servlet.ServletException: Circular view path [index]: would dispatch bac
 java.io.FileNotFoundException: class path resource [template/] cannot be resolved to URL because it does not exist
 	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:230)
 	at org.springframework.core.io.AbstractFileResolvingResource.getFile(AbstractFileResolvingResource.java:169)
-	at io.samples.web.util.FreemarkerUtil.format(FreemarkerUtil.java:48)
-	at io.samples.web.controller.WebController.format(WebController.java:39)
+	at util.io.samples.thrift.api.FreemarkerUtil.format(FreemarkerUtil.java:48)
+	at controller.io.samples.thrift.api.WebController.format(WebController.java:39)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -228,8 +228,8 @@ java.io.FileNotFoundException: class path resource [template/] cannot be resolve
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-07-27 23:18:02.212 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 9256 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
-2024-07-27 23:18:02.216 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-27 23:18:02.212 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarting - Starting FreemarkerBootstrap using Java 21.0.2 with PID 9256 (D:\work\project\spring-boot-native-samples\spring-boot-native-samples-freemarker\target\classes started by Percy in D:\work\project\spring-boot-native-samples)
+2024-07-27 23:18:02.216 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
 2024-07-27 23:18:03.627 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
 2024-07-27 23:18:03.642 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
 2024-07-27 23:18:03.644 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
@@ -239,13 +239,13 @@ java.io.FileNotFoundException: class path resource [template/] cannot be resolve
 2024-07-27 23:18:03.928 [appName_IS_UNDEFINED] [main] [] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
 2024-07-27 23:18:04.459 [appName_IS_UNDEFINED] [main] [] INFO  org.apache.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
 2024-07-27 23:18:04.494 [appName_IS_UNDEFINED] [main] [] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
-2024-07-27 23:18:04.508 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.web.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.239 seconds (process running for 3.924)
+2024-07-27 23:18:04.508 [appName_IS_UNDEFINED] [main] [] INFO  io.samples.thrift.api.FreemarkerBootstrap.logStarted - Started FreemarkerBootstrap in 3.239 seconds (process running for 3.924)
 2024-07-27 23:18:04.594 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-27 23:18:04.595 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-07-27 23:18:04.597 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
 2024-07-27 23:18:04.645 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] ERROR freemarker.configuration.error - DefaultObjectWrapper.incompatibleImprovements was set to the object returned by Configuration.getVersion(). That defeats the purpose of incompatibleImprovements, and makes upgrading FreeMarker a potentially breaking change. Also, this probably won't be allowed starting from 2.4.0. Instead, set incompatibleImprovements to the highest concrete version that's known to be compatible with your application.
 2024-07-27 23:18:04.646 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] ERROR freemarker.configuration.error - Configuration.incompatibleImprovements was set to the object returned by Configuration.getVersion(). That defeats the purpose of incompatibleImprovements, and makes upgrading FreeMarker a potentially breaking change. Also, this probably won't be allowed starting from 2.4.0. Instead, set incompatibleImprovements to the highest concrete version that's known to be compatible with your application.
-2024-07-27 23:18:04.744 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  io.samples.web.util.FreemarkerUtil.format - =========<!DOCTYPE html>
+2024-07-27 23:18:04.744 [appName_IS_UNDEFINED] [http-nio-8080-exec-1] [] INFO  util.io.samples.thrift.api.FreemarkerUtil.format - =========<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -255,7 +255,7 @@ java.io.FileNotFoundException: class path resource [template/] cannot be resolve
 Some freemarker welcome: 44478fdf-4abf-4dc0-abac-0d25a8dbee70
 </body>
 </html>
-2024-07-27 23:18:05.410 [appName_IS_UNDEFINED] [http-nio-8080-exec-2] [] INFO  io.samples.web.util.FreemarkerUtil.format - =========<!DOCTYPE html>
+2024-07-27 23:18:05.410 [appName_IS_UNDEFINED] [http-nio-8080-exec-2] [] INFO  util.io.samples.thrift.api.FreemarkerUtil.format - =========<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -265,7 +265,7 @@ Some freemarker welcome: 44478fdf-4abf-4dc0-abac-0d25a8dbee70
 Some freemarker welcome: 92d673c2-3aaf-4cff-a79e-02185a3a33b0
 </body>
 </html>
-2024-07-27 23:18:09.563 [appName_IS_UNDEFINED] [http-nio-8080-exec-3] [] INFO  io.samples.web.util.FreemarkerUtil.format - =========<!DOCTYPE html>
+2024-07-27 23:18:09.563 [appName_IS_UNDEFINED] [http-nio-8080-exec-3] [] INFO  util.io.samples.thrift.api.FreemarkerUtil.format - =========<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
