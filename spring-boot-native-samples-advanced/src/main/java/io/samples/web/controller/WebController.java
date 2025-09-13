@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import io.samples.web.annotation.AdvancedAnnotation;
+import io.samples.web.service.AdvancedService;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -20,6 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/advanced")
 public class WebController {
+
+    @Resource
+    AdvancedService advancedService;
+
 
     @GetMapping("/hello")
     public String hello(String name) {
@@ -52,5 +59,11 @@ public class WebController {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://www.baidu.com", String.class);
         log.info("=================status:{}, content:{}", responseEntity.getStatusCode(), responseEntity.getBody());
         return responseEntity.getBody();
+    }
+
+    @GetMapping("/advanced-annotation")
+    public String some(){
+        advancedService.some();
+        return "OK";
     }
 }
