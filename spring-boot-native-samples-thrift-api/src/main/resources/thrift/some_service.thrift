@@ -10,9 +10,3 @@ service SomeService {
     i32 addUser(1: required User user);
     list<User> findUserByIds(1: list<i32> idList);
 }
-
-service SomeService2 {
-	string echo2(1: string msg);
-    i32 addUser2(1: required User user);
-    list<User> findUserByIds2(1: list<i32> idList);
-}

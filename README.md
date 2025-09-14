@@ -55,6 +55,14 @@ https://www.graalvm.org/native-image/libraries-and-frameworks/
 - rpc(thrift, dubbo)
 - config
 
+### Thrift
+如果本地没有安装thrift，把最外层pom.xml 关于thrift模块注释掉
+
+```xml
+<module>spring-boot-native-samples-thrift-api</module>
+```
+
+
 我理想中的架构模型，apisix作为网关，提供限流（Service, Endpoint, URL, QueryString, http header, uid ...），认证鉴权(auth, authz)，
 协议转换(http->dubbo, http->thrift)，路由，降级，服务编排等特性。
 
@@ -66,7 +74,12 @@ https://www.graalvm.org/native-image/libraries-and-frameworks/
 
 上述的组件显然不能满足企业级使用，但是常见的微服务能满足80%场景，有的是老服务无法升级，或者使用了大量的第三方包组件等，可以把这些服务提出出一个大杂烩项目，由这个大杂烩项目运行无法native的组件。
 
-我个人Spring Cloud体系
+我个人Spring Cloud体系问题很大，未来没有前途。
+
+---
+
+
+
 
 
 
