@@ -1,0 +1,8 @@
+[
+  {
+    "name": "io.samples.dynamic.controller.DynamicUrlHandler",
+    "methods": [
+      { "name": "handleDynamicRequest", "parameterTypes": ["java.util.Map"] }
+    ]
+  }
+]
