@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -30,6 +31,8 @@ import lombok.extern.slf4j.Slf4j;
 public class DynamicUrlController {
     @Autowired
     private RequestMappingHandlerMapping requestMappingHandlerMapping;
+    @Autowired
+    private DynamicUrlHandler dynamicUrlHandler;
 
     private final Map<String, String> urlCache = new ConcurrentHashMap<>();
 
@@ -59,7 +62,7 @@ public class DynamicUrlController {
             // 注册映射
             requestMappingHandlerMapping.registerMapping(
                     requestMappingInfo,
-                    dynamicUrlHandler(),
+                    dynamicUrlHandler,
                     handlerMethod
             );
 
@@ -111,10 +114,33 @@ public class DynamicUrlController {
         return ResponseEntity.ok(urlCache);
     }
 
-    @Bean
-    public DynamicUrlHandler dynamicUrlHandler() {
-        return new DynamicUrlHandler();
+    /**
+     * 应用启动时注册一些初始动态URL
+     */
+    @PostConstruct
+    public void initDynamicUrls() {
+        try {
+            // 示例：应用启动时注册一个默认的动态URL
+            RequestMappingInfo initialMapping = RequestMappingInfo
+                    .paths("/api/dynamic/default")
+                    .methods(RequestMethod.GET)
+                    .produces(MediaType.APPLICATION_JSON_VALUE)
+                    .build();
+
+            Method handlerMethod = ReflectionUtils.findMethod(
+                    DynamicUrlHandler.class,
+                    "handleDynamicRequest",
+                    Map.class
+            );
+
+            requestMappingHandlerMapping.registerMapping(
+                    initialMapping,
+                    dynamicUrlHandler,
+                    handlerMethod
+            );
+
+        } catch (Exception e) {
+            throw new RuntimeException("初始化动态URL失败", e);
+        }
     }
-
-
 }

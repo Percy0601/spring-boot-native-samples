@@ -13,13 +13,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date: 2026/1/15
  */
 public class DynamicUrlHandler {
+    private SomeService someService;
+    public DynamicUrlHandler() {
+
+    }
+
+    public DynamicUrlHandler(SomeService someService) {
+        this.someService = someService;
+    }
+
     @ResponseBody
     public ResponseEntity<Object> handleDynamicRequest(@RequestBody(required = false) Map<String, Object> requestBody) {
 
         // 这里处理动态URL的业务逻辑
         // 可以根据需要访问数据库、调用服务等
         String result = "处理动态请求成功，请求数据: " + requestBody;
-
+        String message = someService.hello("abc");
+        result = result.concat(message);
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Map.of(
