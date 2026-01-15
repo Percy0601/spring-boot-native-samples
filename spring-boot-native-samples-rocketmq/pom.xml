@@ -15,7 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rocketmq-client-java.version>5.0.7</rocketmq-client-java.version>
+        <rocketmq-client-java.version>5.1.0</rocketmq-client-java.version>
     </properties>
 
     <dependencies>
@@ -64,7 +64,7 @@
                             <metadataRepository>
                                 <enabled>true</enabled>
                             </metadataRepository>
-                            <requiredVersion>22.3</requiredVersion>
+<!--                            <requiredVersion>22.3</requiredVersion>-->
                             <buildArgs combine.children="append">
                                 <buildArg>--initialize-at-build-time=org.apache.commons.logging.LogFactoryService</buildArg>
                                 <buildArg>--enable-url-protocols=http</buildArg> <!-- ★★★Need to specify★★★ -->

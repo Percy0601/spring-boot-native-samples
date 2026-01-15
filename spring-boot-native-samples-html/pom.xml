@@ -11,8 +11,8 @@
 
     <artifactId>spring-boot-native-samples-html</artifactId>
     <properties>
-        <java.version>17</java.version>
-        <native-build-tools-plugin.version>0.9.28</native-build-tools-plugin.version>
+        <java.version>21</java.version>
+        <native-build-tools-plugin.version>0.11.3</native-build-tools-plugin.version>
     </properties>
 
     <dependencies>

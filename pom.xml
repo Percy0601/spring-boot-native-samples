@@ -34,20 +34,22 @@
         <module>spring-boot-native-samples-thrift-api</module>
         <module>spring-boot-native-samples-thrift-provider</module>
         <module>spring-boot-native-samples-thrift-consumer</module>
+        <module>spring-boot-native-samples-dynamic</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version>
+        <version>4.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <prometheus-metrics-shaded-protobuf.version>1.3.1</prometheus-metrics-shaded-protobuf.version>
     </properties>
 
     <dependencies>
@@ -66,9 +68,19 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka-client.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>io.native.samples</groupId>
                 <artifactId>spring-boot-native-samples-thrift-api</artifactId>
                 <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>io.prometheus</groupId>
+                <artifactId>prometheus-metrics-shaded-protobuf</artifactId>
+                <version>${prometheus-metrics-shaded-protobuf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
