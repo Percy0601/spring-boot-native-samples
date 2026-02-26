@@ -35,6 +35,7 @@
         <module>spring-boot-native-samples-thrift-provider</module>
         <module>spring-boot-native-samples-thrift-consumer</module>
         <module>spring-boot-native-samples-dynamic</module>
+        <module>spring-boot-native-samples-meta-converter</module>
     </modules>
 
     <parent>
