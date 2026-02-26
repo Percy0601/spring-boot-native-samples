@@ -1,4 +1,4 @@
-package io.samples.redis.test;
+package io.samples.meta.test;
 
 import java.util.List;
 import java.util.Set;

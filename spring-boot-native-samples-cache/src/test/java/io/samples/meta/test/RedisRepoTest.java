@@ -1,4 +1,4 @@
-package io.samples.redis.test;
+package io.samples.meta.test;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -12,5 +12,8 @@ import lombok.Data;
 @Data
 public class MetaClass {
     private String name;
+    private String namespace;
+    private MetaType metaType;
     private List<MetaProperty> properties;
+
 }

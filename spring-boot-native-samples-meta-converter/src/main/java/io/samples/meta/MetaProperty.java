@@ -11,5 +11,5 @@ import lombok.Data;
 public class MetaProperty {
     private String name;
     private Object value;
-    private Class type;
+    private String type;
 }

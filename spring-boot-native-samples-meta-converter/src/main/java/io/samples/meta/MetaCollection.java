@@ -12,5 +12,5 @@ import lombok.Data;
 @Data
 public class MetaCollection {
     private String name;
-    private List<MetaProperty> properties;
+    private List<MetaClass> metas;
 }
