@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -137,6 +138,27 @@ public class DynamicUrlController {
                     initialMapping,
                     dynamicUrlHandler,
                     handlerMethod
+            );
+
+
+            // 示例：应用启动时注册一个默认的动态URL
+            RequestMappingInfo initialMapping2 = RequestMappingInfo
+                    .paths("/api/dynamic/{name}/path-value")
+                    .methods(RequestMethod.GET)
+                    .produces(MediaType.APPLICATION_JSON_VALUE)
+                    .build();
+
+            Method handlerMethod2 = ReflectionUtils.findMethod(
+                    DynamicUrlHandler.class,
+                    "handleDynamicPathValue",
+                    String.class,
+                    HttpServletRequest.class
+            );
+
+            requestMappingHandlerMapping.registerMapping(
+                    initialMapping2,
+                    dynamicUrlHandler,
+                    handlerMethod2
             );
 
         } catch (Exception e) {

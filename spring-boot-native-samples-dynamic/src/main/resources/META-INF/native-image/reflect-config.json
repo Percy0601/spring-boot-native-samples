@@ -2,7 +2,8 @@
   {
     "name": "io.samples.dynamic.controller.DynamicUrlHandler",
     "methods": [
-      { "name": "handleDynamicRequest", "parameterTypes": ["java.util.Map"] }
+      { "name": "handleDynamicRequest", "parameterTypes": ["java.util.Map"] },
+      { "name": "handleDynamicPathValue", "parameterTypes": ["java.lang.String", "jakarta.servlet.http.HttpServletRequest"] }
     ]
   }
 ]

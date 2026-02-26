@@ -4,8 +4,12 @@ import java.util.Map;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.HandlerMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -35,6 +39,21 @@ public class DynamicUrlHandler {
                 .body(Map.of(
                         "status", "success",
                         "message", result,
+                        "timestamp", System.currentTimeMillis()
+                ));
+    }
+
+
+    @ResponseBody
+    public ResponseEntity<Object> handleDynamicPathValue(@PathVariable(name="name") String name, HttpServletRequest request) {
+        String message = "Hello: ".concat(name);
+        Map<String, String> pathVariables = (Map) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
+        String name2 = pathVariables.get("name");
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Map.of(
+                        "status", "success",
+                        "message", message,
                         "timestamp", System.currentTimeMillis()
                 ));
     }
