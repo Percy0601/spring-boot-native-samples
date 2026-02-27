@@ -31,8 +31,10 @@ public class MetaUtil {
 
     private static void handleProperties(MetaClass metaClass, MetaProperty metaProperty) {
         // handle Integer type
+        String name = metaProperty.getName();
         if(metaProperty.getType().equals(Integer.class.getName())) {
-            metaProperty.getName();
+            String jp = "$.".concat(name);
+
 
 
         }
