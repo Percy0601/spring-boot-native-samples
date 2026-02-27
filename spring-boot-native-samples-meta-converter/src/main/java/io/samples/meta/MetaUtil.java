@@ -22,10 +22,6 @@ public class MetaUtil {
     public static MetaClass metaClass(String type, String json) {
         MetaClass metaClass = loadDefinition();
 
-
-
-
-
         return null;
     }
 
