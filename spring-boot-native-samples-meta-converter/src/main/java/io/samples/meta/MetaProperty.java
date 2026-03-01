@@ -12,4 +12,5 @@ public class MetaProperty {
     private String name;
     private Object value;
     private String type;
+    private String typeName;
 }
