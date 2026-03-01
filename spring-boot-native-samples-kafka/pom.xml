@@ -11,7 +11,7 @@
 
     <artifactId>spring-boot-native-samples-kafka</artifactId>
     <properties>
-        <java.version>25</java.version>
+        <java.version>21</java.version>
         <native-build-tools-plugin.version>0.11.4</native-build-tools-plugin.version>
         <kafka-client.version>4.2.0</kafka-client.version>
     </properties>
