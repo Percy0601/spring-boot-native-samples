@@ -7,6 +7,8 @@ import com.jayway.jsonpath.DocumentContext;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.AntPathMatcher;
+import org.springframework.util.PathMatcher;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
@@ -43,5 +45,16 @@ public class MetaSomeTest {
         Object bicycle0 = JsonPath.read(document, "$.store.bicycle");
         log.info("bicycle-0:{}", bicycle0);
         log.info("bicycle-color-0:{}", JsonPath.read(bicycle0, "$.color").toString());
+    }
+
+
+    @Test
+    void testAntMath() {
+        PathMatcher matcher = new AntPathMatcher();
+        String fullpath = "石家庄以岭药业股份有限公司-营销公司-配方颗粒事业部-营销部-新业务部-业务拓展一部";
+        fullpath = fullpath.replaceAll("-", "/");
+        boolean result = matcher.match("石家庄以岭药业股份有限公司/营销公司/配方颗粒事业部/营销部/新业务部/**", fullpath);
+
+        log.info("result:{}", result);
     }
 }

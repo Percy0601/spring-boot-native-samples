@@ -30,7 +30,8 @@
     ],
     "bicycle": {
       "color": "red",
-      "price": 19.95
+      "price": 19.958876567765,
+      "count": 3
     }
   },
   "expensive": 10
