@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
+import org.springframework.util.CollectionUtils;
 
 /**
  *
@@ -53,18 +54,26 @@ public class MetaUtil {
 
         MetaClass metaClass = loadClass(namespace, name);
         Object document = Configuration.defaultConfiguration().jsonProvider().parse(json);
-        handleMetaCollection(metaClass, document);
         MetaCollection mc = new MetaCollection();
         mc.setName(name);
-
-
+        List<Map<String, Object>> values = (List<Map<String, Object>>)document;
+        if(CollectionUtils.isEmpty(values)) {
+            mc.setMetas(null);
+            return mc;
+        }
+        List<MetaClass> mcs = new ArrayList<>();
+        mc.setMetas(mcs);
+        for(Map<String, Object> v: values) {
+            MetaClass m = new MetaClass();
+            BeanUtils.copyProperties(metaClass, m);
+            mcs.add(m);
+            handleMetaClass(m, v);
+        }
 
         return mc;
     }
 
-    private static void handleMetaCollection(MetaClass metaClass, Object document) {
 
-    }
     private static void handleMetaClass(MetaClass metaClass, Object document) {
         List<MetaProperty> properties = metaClass.getProperties();
         for(MetaProperty metaProperty: properties) {

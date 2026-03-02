@@ -5,6 +5,7 @@ import java.nio.file.Files;
 
 import com.jayway.jsonpath.DocumentContext;
 import io.samples.meta.MetaClass;
+import io.samples.meta.MetaCollection;
 import io.samples.meta.MetaUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -74,6 +75,23 @@ public class MetaSomeTest {
 
         //Object document = Configuration.defaultConfiguration().jsonProvider().parse(json);
         MetaClass metaClass = MetaUtil.metaClass("Market", json);
+        ObjectMapper mapper = new ObjectMapper();
+        log.info("=========={}", mapper.writeValueAsString(metaClass));
+    }
+
+    @Test
+    void testMetaCollection() {
+        ClassPathResource classPathResource = new ClassPathResource("./333.json");
+        String json = "";
+        try {
+            json = Files.readString(classPathResource.getFilePath());
+            //log.info("========{}", json);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //Object document = Configuration.defaultConfiguration().jsonProvider().parse(json);
+        MetaCollection metaClass = MetaUtil.metaCollection("Market", json);
         ObjectMapper mapper = new ObjectMapper();
         log.info("=========={}", mapper.writeValueAsString(metaClass));
     }
