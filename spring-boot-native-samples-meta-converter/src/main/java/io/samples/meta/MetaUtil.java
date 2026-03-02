@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.beans.BeanUtils;
+
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.Option;
-import org.springframework.beans.BeanUtils;
 
 /**
  *
@@ -41,9 +41,30 @@ public class MetaUtil {
     }
 
     public static MetaCollection metaCollection(String type, String json) {
-        return null;
+        String name = "";
+        String namespace = "";
+        if(type.contains(".")) {
+            String[] parts = type.split(".");
+            name = parts[parts.length -1];
+        } else {
+            name = type;
+            namespace = "default";
+        }
+
+        MetaClass metaClass = loadClass(namespace, name);
+        Object document = Configuration.defaultConfiguration().jsonProvider().parse(json);
+        handleMetaCollection(metaClass, document);
+        MetaCollection mc = new MetaCollection();
+        mc.setName(name);
+
+
+
+        return mc;
     }
 
+    private static void handleMetaCollection(MetaClass metaClass, Object document) {
+
+    }
     private static void handleMetaClass(MetaClass metaClass, Object document) {
         List<MetaProperty> properties = metaClass.getProperties();
         for(MetaProperty metaProperty: properties) {
@@ -149,18 +170,8 @@ public class MetaUtil {
 
         if(metaProperty.getType().equals(BigDecimal.class.getName())) {
             metaProperty.setValue(new BigDecimal(value.toString()));
-            return;
+
         }
-//
-//        if(metaProperty.getType().equals(MetaClass.class.getName())) {
-//
-//        }
-//
-//        if(metaProperty.getType().equals(MetaCollection.class.getName())) {
-//
-//        }
-
-
     }
 
 
@@ -195,10 +206,6 @@ public class MetaUtil {
         if(name.equals("Book")) {
             metaClass.setName("Book");
             metaClass.setNamespace("default");
-//            "category": "reference",
-//                    "author": "Nigel Rees",
-//                    "title": "Sayings of the Century",
-//                    "price": 8.95
             List<MetaProperty> properties = new ArrayList<>();
             MetaProperty property1 = new MetaProperty();
             property1.setName("category");
@@ -227,9 +234,6 @@ public class MetaUtil {
         if(name.equals("Store")) {
             metaClass.setName("Store");
             metaClass.setNamespace("default");
-//            "color": "red",
-//                    "price": 19.958876567765,
-//                    "count": 3
             List<MetaProperty> properties = new ArrayList<>();
             MetaProperty property1 = new MetaProperty();
             property1.setName("book");
@@ -250,9 +254,6 @@ public class MetaUtil {
         if(name.equals("Bicycle")) {
             metaClass.setName("Bicycle");
             metaClass.setNamespace("default");
-//            "color": "red",
-//                    "price": 19.958876567765,
-//                    "count": 3
             List<MetaProperty> properties = new ArrayList<>();
             MetaProperty property1 = new MetaProperty();
             property1.setName("color");
@@ -275,14 +276,5 @@ public class MetaUtil {
 
         return null;
     }
-
-    private static MetaClass handlePath(MetaClass metaClass, MetaProperty metaProperty) {
-//        JsonPath.parse("").r
-
-
-        return null;
-    }
-
-
 
 }
