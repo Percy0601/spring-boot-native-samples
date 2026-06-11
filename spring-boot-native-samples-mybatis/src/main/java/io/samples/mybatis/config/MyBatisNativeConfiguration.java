@@ -63,8 +63,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-//@Configuration(proxyBeanMethods = false)
-//@ImportRuntimeHints(MyBatisNativeConfiguration.MyBaitsRuntimeHintsRegistrar.class)
+@Configuration(proxyBeanMethods = false)
+@ImportRuntimeHints(MyBatisNativeConfiguration.MyBaitsRuntimeHintsRegistrar.class)
 public class MyBatisNativeConfiguration {
 
     @Bean
