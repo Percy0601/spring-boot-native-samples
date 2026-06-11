@@ -14,8 +14,12 @@
     <url>http://maven.apache.org</url>
 
     <properties>
+        <java.version>25</java.version>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mybatis-spring-boot-starter.version>4.0.1</mybatis-spring-boot-starter.version>
+        <start-class>io.samples.mybatis.MybatisBootstrap</start-class>
     </properties>
 
     <dependencies>
