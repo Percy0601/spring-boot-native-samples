@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import io.samples.mybatis.entity.Author;
 import io.samples.mybatis.entity.Book;
 import io.samples.mybatis.repo.AuthorRepository;
+import io.samples.mybatis.repo.BookRepository;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -21,10 +22,25 @@ public class AuthorRepoTest {
 
     @Autowired
     AuthorRepository authorRepository;
-
+    @Autowired
+    BookRepository bookRepository;
     @Test
     void test() {
         log.info("=================={}", (null == authorRepository));
+    }
+
+    @Test
+    void testCreate() {
+        Book book = new Book();
+        book.setTitle("Abc");
+        bookRepository.save(book);
+    }
+
+    @Test
+    void testFindAllBooks() {
+
+        List<Book> books = bookRepository.findAll();
+        log.info("===============books:{}", books);
     }
 
     private void deleteAll() {
