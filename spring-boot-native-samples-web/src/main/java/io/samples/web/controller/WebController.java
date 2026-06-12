@@ -1,4 +1,4 @@
-package io.samples.thrift.api.controller;
+package io.samples.web.controller;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;
@@ -16,14 +16,14 @@ import lombok.extern.slf4j.Slf4j;
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
+//@Slf4j
 @RestController
 @RequestMapping("/web")
 public class WebController {
 
     @GetMapping("/hello")
     public String hello(String name) {
-        log.info("hello world, {}", name);
+//        log.info("hello world, {}", name);
         return "Hello World, ".concat(name).concat("!");
     }
 
@@ -36,7 +36,7 @@ public class WebController {
         String vendor = runtime.getVmVendor();
         String version = runtime.getVmVersion();
         // native: Substrate VM
-        log.info("jvm info: name:{}, vendor:{}, version:{}", name, vendor, version);
+//        log.info("jvm info: name:{}, vendor:{}, version:{}", name, vendor, version);
         return "jvm info, name: "
                 .concat(name)
                 .concat("; vendor: ")
@@ -50,7 +50,7 @@ public class WebController {
     public String testRestTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://www.baidu.com", String.class);
-        log.info("=================status:{}, content:{}", responseEntity.getStatusCode(), responseEntity.getBody());
+//        log.info("=================status:{}, content:{}", responseEntity.getStatusCode(), responseEntity.getBody());
         return responseEntity.getBody();
     }
 }

@@ -1,4 +1,4 @@
-package io.samples.thrift.api.controller;
+package io.samples.httpclient.controller;
 
 import java.io.IOException;
 

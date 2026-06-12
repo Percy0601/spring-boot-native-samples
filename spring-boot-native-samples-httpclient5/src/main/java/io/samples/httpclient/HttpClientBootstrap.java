@@ -1,4 +1,4 @@
-package io.samples.thrift.api;
+package io.samples.httpclient;
 
 /**
  * @author: baoxin.zhao
@@ -8,10 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WebBootstrap {
+public class HttpClientBootstrap {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebBootstrap.class, args);
+        SpringApplication.run(HttpClientBootstrap.class, args);
     }
 
 }
