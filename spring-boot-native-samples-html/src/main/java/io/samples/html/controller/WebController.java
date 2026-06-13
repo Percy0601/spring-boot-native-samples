@@ -2,8 +2,10 @@ package io.samples.html.controller;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +35,10 @@ public class WebController {
         return "Hello World, ".concat(name).concat("!");
     }
 
+    /**
+     * 加载磁盘绝对路径
+     * @return
+     */
     @GetMapping("/load-html")
     public String loadHtml() {
         String content = "";
@@ -45,4 +51,22 @@ public class WebController {
         return content;
     }
 
+    /**
+     * 加载native-image路径
+     * @return
+     */
+    @GetMapping("/load-native-html")
+    public String loadNativeHtml() {
+        String content = "";
+        try {
+            URI uri = this.getClass().getResource("/resources/r.html").toURI();
+            Path path = Paths.get(uri);
+            content = Files.readString(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        return content;
+    }
 }
