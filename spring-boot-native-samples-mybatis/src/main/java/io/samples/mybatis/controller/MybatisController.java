@@ -2,6 +2,8 @@ package io.samples.mybatis.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +22,11 @@ import lombok.extern.slf4j.Slf4j;
  * @author: baoxin.zhao
  * @date: 2024/2/27
  */
-@Slf4j
+//@Slf4j
 @RestController
 @RequestMapping("/mybatis")
 public class MybatisController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     AuthorRepository authorRepository;
     @Autowired

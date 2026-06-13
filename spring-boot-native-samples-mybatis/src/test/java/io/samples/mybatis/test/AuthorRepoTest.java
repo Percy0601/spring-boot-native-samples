@@ -3,6 +3,8 @@ package io.samples.mybatis.test;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,10 +18,10 @@ import lombok.extern.slf4j.Slf4j;
  * @author: baoxin.zhao
  * @date: 2024/2/27
  */
-@Slf4j
+//@Slf4j
 @SpringBootTest
 public class AuthorRepoTest {
-
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     AuthorRepository authorRepository;
     @Autowired
