@@ -3,6 +3,8 @@ package io.samples.dynamic.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,18 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  *
  * @author: baoxin.zhao
  * @date: 2026/1/15
  */
-@Slf4j
 @RestController
 @RequestMapping("/api/custom")
 public class CustomController {
-
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     /**
      * Headers: {host=localhost:8080, user-agent=Mozilla/5.0, accept-language=en-US,en;q=0.9}
      * @param userAgent

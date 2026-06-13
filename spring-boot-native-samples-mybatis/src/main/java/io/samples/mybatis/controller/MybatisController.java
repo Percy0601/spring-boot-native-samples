@@ -16,13 +16,11 @@ import io.samples.mybatis.mapper.BookMapper;
 import io.samples.mybatis.repo.AuthorRepository;
 import io.samples.mybatis.repo.BookRepository;
 import io.samples.mybatis.vo.BookVO;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/2/27
  */
-//@Slf4j
 @RestController
 @RequestMapping("/mybatis")
 public class MybatisController {

@@ -4,21 +4,22 @@ import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import io.samples.mybatis.entity.Author;
 import io.samples.mybatis.entity.Book;
 import io.samples.mybatis.repo.AuthorRepository;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/2/27
  */
-@Slf4j
 @SpringBootTest
 public class AuthorRepoTest {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     AuthorRepository authorRepository;

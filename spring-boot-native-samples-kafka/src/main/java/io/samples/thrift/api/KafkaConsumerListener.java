@@ -10,19 +10,20 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/7/28
  */
-@Slf4j
 @Service
 public class KafkaConsumerListener {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Value("${kafka.host:192.168.1.16:9092}")
     private String host;

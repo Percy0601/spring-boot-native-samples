@@ -7,8 +7,10 @@ import com.jayway.jsonpath.DocumentContext;
 import io.samples.meta.MetaClass;
 import io.samples.meta.MetaCollection;
 import io.samples.meta.MetaUtil;
-import lombok.extern.slf4j.Slf4j;
+
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
@@ -17,8 +19,8 @@ import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import tools.jackson.databind.ObjectMapper;
 
-@Slf4j
 public class MetaSomeTest {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
 
     @Test

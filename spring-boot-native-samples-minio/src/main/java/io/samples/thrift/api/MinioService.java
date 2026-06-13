@@ -7,6 +7,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -24,15 +26,14 @@ import io.minio.errors.MinioException;
 import io.minio.errors.ServerException;
 import io.minio.errors.XmlParserException;
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/7/28
  */
-@Slf4j
 @Service
 public class MinioService {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Value("${minio.host:http://127.0.0.1:9000}")
     private String endpoint;

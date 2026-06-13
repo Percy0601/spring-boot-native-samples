@@ -3,20 +3,21 @@ package io.samples.thrift.api.advanced;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/11/10
  */
 
-@Slf4j
 public class AdvancedBeanPostProcessor implements BeanPostProcessor {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Value("${advance.cache.bean.prefix:io.samples}")
     private String prefix;

@@ -3,6 +3,8 @@ package io.samples.caffeine.controller;
 import java.util.Collection;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
@@ -16,16 +18,15 @@ import org.springframework.web.client.RestTemplate;
 
 import io.samples.caffeine.entity.User;
 import jakarta.annotation.Resource;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/caffeine")
 public class WebController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource(name = "customCacheManager")
     CacheManager cacheManager;

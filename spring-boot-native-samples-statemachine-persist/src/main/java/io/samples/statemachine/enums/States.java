@@ -1,23 +1,22 @@
 package io.samples.statemachine.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
-
 /**
  * 订单状态（States)
  *
  * @author: baoxin.zhao
  * @date: 2024/8/1
  */
-@ToString
-@Getter
-@AllArgsConstructor
+
 public enum States {
     SI(0, "SI"),
     S1(1, "S1"),
     S2(2, "S2"),
     ;
+
+    States(Integer code, String name) {
+        this.code = code;
+        this.name = name;
+    }
 
     private final Integer code;
     private final String name;
@@ -29,5 +28,18 @@ public enum States {
             }
         }
         return null;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "States{" + "code=" + code + ", name='" + name + '\'' + '}';
     }
 }

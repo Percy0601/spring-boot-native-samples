@@ -8,21 +8,22 @@ import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
 import org.apache.thrift.transport.layered.TFramedTransport;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.samples.thrift.api.SomeService;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/consumer")
 public class ConsumerController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/hello")
     public String hello(String name) {

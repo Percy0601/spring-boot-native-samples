@@ -4,8 +4,9 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ReflectionUtils;
@@ -20,16 +21,15 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/api/dynamic")
 public class DynamicUrlController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private RequestMappingHandlerMapping requestMappingHandlerMapping;
     @Autowired

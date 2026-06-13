@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.samples.redis.config.RedisUtil;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/2/27
  */
-@Slf4j
 @RestController
 @RequestMapping("/redis")
 public class RedisController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     RedisUtil redisUtil;
 

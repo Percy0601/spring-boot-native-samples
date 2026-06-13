@@ -7,20 +7,21 @@ import java.io.Writer;
 import java.util.Map;
 import java.util.Objects;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.util.ClassUtils;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/7/27
  */
-@Slf4j
 public class FreemarkerUtil {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     private static FreemarkerUtil instance;
     private Resource resource;
     private Configuration configuration;

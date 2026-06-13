@@ -1,18 +1,18 @@
 package io.samples.thrift.api.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/7/27
  */
-@Slf4j
 @Controller
 public class FreemarkerController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping("/")
     public String index(Model model){

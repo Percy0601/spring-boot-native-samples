@@ -3,6 +3,8 @@ package io.samples.thrift.api.controller;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,16 +13,15 @@ import org.springframework.web.client.RestTemplate;
 
 import io.samples.thrift.api.service.AdvancedService;
 import jakarta.annotation.Resource;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/advanced")
 public class WebController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     AdvancedService advancedService;

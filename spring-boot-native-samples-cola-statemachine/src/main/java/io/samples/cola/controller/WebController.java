@@ -1,5 +1,7 @@
 package io.samples.cola.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +17,6 @@ import io.samples.cola.entity.Order;
 import io.samples.cola.enums.OrderEvent;
 import io.samples.cola.enums.OrderState;
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 
 import static io.samples.cola.enums.Constant.MACHINE_ID;
 
@@ -23,10 +24,10 @@ import static io.samples.cola.enums.Constant.MACHINE_ID;
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/web")
 public class WebController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     StateMachineBuilder<OrderState, OrderEvent, Order> builder;
     StateMachine<OrderState, OrderEvent, Order> stateMachine;
     @PostConstruct

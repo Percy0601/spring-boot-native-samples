@@ -12,13 +12,11 @@ import io.samples.mybatis.entity.Author;
 import io.samples.mybatis.entity.Book;
 import io.samples.mybatis.repo.AuthorRepository;
 import io.samples.mybatis.repo.BookRepository;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/2/27
  */
-//@Slf4j
 @SpringBootTest
 public class AuthorRepoTest {
     private Logger log = LoggerFactory.getLogger(this.getClass());

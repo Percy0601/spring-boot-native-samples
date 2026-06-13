@@ -1,5 +1,7 @@
 package io.samples.statemachine.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.util.StringUtils;
@@ -9,16 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.samples.statemachine.enums.Events;
 import io.samples.statemachine.enums.States;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/web")
 public class WebController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     StateMachine<States, Events> stateMachine;

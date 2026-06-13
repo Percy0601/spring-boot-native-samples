@@ -12,7 +12,8 @@
     <artifactId>spring-boot-native-samples-html</artifactId>
     <properties>
         <java.version>25</java.version>
-<!--        <native-build-tools-plugin.version>0.11.3</native-build-tools-plugin.version>-->
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <start-class>io.samples.html.HtmlBootstrap</start-class>
     </properties>
 

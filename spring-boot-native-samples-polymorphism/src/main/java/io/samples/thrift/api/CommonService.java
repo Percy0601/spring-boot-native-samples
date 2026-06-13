@@ -7,11 +7,12 @@ import io.samples.thrift.api.entity.Author;
 import io.samples.thrift.api.entity.Company;
 import io.samples.thrift.api.repo.AuthorRepository;
 import io.samples.thrift.api.repo.CompanyRepository;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 @Service
 public class CommonService implements AuthorRepository, CompanyRepository {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Override
     public <S extends AbstractEntity> S save(S entity) {
         if(entity instanceof Author) {

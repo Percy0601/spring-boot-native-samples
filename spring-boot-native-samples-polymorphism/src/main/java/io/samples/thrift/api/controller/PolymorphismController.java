@@ -13,16 +13,17 @@ import io.samples.thrift.api.entity.Author;
 import io.samples.thrift.api.entity.Company;
 import io.samples.thrift.api.repo.AuthorRepository;
 import io.samples.thrift.api.repo.CompanyRepository;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/02/24
  */
-@Slf4j
 @RestController
 @RequestMapping("/polymorphism")
 public class PolymorphismController {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     AuthorRepository authorRepository;

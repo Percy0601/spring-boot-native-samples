@@ -1,19 +1,19 @@
 package io.samples.cache;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/8/19
  */
-@Slf4j
 @Service
 @CacheConfig(cacheNames = "some-key")
 public class SomeService {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Cacheable
     public String trainingCache(String name) {

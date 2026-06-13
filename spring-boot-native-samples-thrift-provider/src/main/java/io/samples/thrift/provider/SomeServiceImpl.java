@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.thrift.TException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import io.samples.thrift.api.SomeService;
 import io.samples.thrift.api.User;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class SomeServiceImpl implements SomeService.Iface {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     public SomeServiceImpl() {
         log.info("##############1111");

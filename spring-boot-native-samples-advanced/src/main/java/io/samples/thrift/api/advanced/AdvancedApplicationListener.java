@@ -1,17 +1,17 @@
 package io.samples.thrift.api.advanced;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.ApplicationListener;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author: baoxin.zhao
  * @date: 2024/11/17
  */
 
-@Slf4j
 public class AdvancedApplicationListener implements ApplicationListener<ApplicationStartedEvent> {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Override
     public void onApplicationEvent(ApplicationStartedEvent event) {
         log.info("##########:{}", event.getSource());
