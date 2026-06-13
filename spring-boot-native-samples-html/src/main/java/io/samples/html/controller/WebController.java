@@ -1,6 +1,7 @@
 package io.samples.html.controller;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -36,8 +37,7 @@ public class WebController {
     public String loadHtml() {
         String content = "";
         try {
-            Resource resource = new ClassPathResource("./static/static.html");
-            Path path = resource.getFilePath();
+            Path path = Path.of("/data/html/static.html");
             content = Files.readString(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
