@@ -143,7 +143,7 @@ public class WebController {
         try {
             context = JAXBContext.newInstance(Book.class);
             unmarshaller = context.createUnmarshaller();
-            inputStream = this.getClass().getResourceAsStream("/xml/123.xml");
+            inputStream = this.getClass().getResourceAsStream("/resources/xml/123.xml");
             byte[] bytes = inputStream.readAllBytes();
             xml = new String(bytes, Charset.forName("UTF-8"));
             reader = new StringReader(xml);
