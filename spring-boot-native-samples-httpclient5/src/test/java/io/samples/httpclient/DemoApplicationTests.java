@@ -1,4 +1,4 @@
-package io.samples.thrift.api;
+package io.samples.httpclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package io.samples.thrift.api;
+package io.samples.html;
 
 /**
  * @author: baoxin.zhao
