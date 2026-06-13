@@ -1,16 +1,15 @@
 package io.samples.html.controller;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,14 +57,24 @@ public class WebController {
     @GetMapping("/load-native-html")
     public String loadNativeHtml() {
         String content = "";
+        InputStream inputStream = null;
         try {
             URI uri = this.getClass().getResource("/resources/r.html").toURI();
-            Path path = Paths.get(uri);
-            content = Files.readString(path);
+            inputStream = this.getClass().getResourceAsStream("/resources/r.html");
+            byte[] bytes = inputStream.readAllBytes();
+            content = new String(bytes, Charset.forName("UTF-8"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
+        } finally {
+            if(null != inputStream) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
         return content;
     }
