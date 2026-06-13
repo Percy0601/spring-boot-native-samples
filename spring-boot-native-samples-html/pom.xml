@@ -13,7 +13,7 @@
     <properties>
         <java.version>25</java.version>
 <!--        <native-build-tools-plugin.version>0.11.3</native-build-tools-plugin.version>-->
-        <start-class>io.samples.thrift.api.HtmlBootstrap</start-class>
+        <start-class>io.samples.html.HtmlBootstrap</start-class>
     </properties>
 
     <dependencies>
