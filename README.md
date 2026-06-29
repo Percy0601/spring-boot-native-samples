@@ -14,6 +14,19 @@
 mvn clean -DskipTests=true -Pnative native:compile
 ```
 
+构建时候配置参数
+```
+mvn clean -DskipTests -Pnative native:compile \
+  -Dnative.image.build.args="
+    -J-Xms14g -J-Xmx14g
+    -J-XX:MaxMetaspaceSize=512m
+    -J-XX:ParallelGCThreads=4
+    -J-XX:ConcGCThreads=2
+    --no-fallback
+  "
+```
+
+
 运行时参数指定：
 ```
 ./xxx -Xms50m -Xmx50m -Xmn50m
