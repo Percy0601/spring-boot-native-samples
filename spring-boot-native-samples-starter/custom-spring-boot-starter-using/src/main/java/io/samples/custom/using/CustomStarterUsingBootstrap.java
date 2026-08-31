@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CustomStarterUsingBootstrap {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication.run(CustomStarterUsingBootstrap.class, args);
     }
 }
