@@ -1,0 +1,79 @@
+{
+  "metaClasses": [
+    {
+      "name": "Market",
+      "namespace": "default",
+      "metaType": "VO",
+      "properties": [
+        {
+          "name": "expensive",
+          "type": "java.lang.Integer"
+        },
+        {
+          "name": "store",
+          "type": "io.samples.meta.MetaClass",
+          "typeName": "Store"
+        }
+      ]
+    },
+    {
+      "name": "Store",
+      "namespace": "default",
+      "metaType": "VO",
+      "properties": [
+        {
+          "name": "book",
+          "type": "io.samples.meta.MetaCollection",
+          "typeName": "Book"
+        },
+        {
+          "name": "bicycle",
+          "type": "io.samples.meta.MetaClass",
+          "typeName": "Bicycle"
+        }
+      ]
+    },
+    {
+      "name": "Book",
+      "namespace": "default",
+      "metaType": "VO",
+      "properties": [
+        {
+          "name": "category",
+          "type": "java.lang.String"
+        },
+        {
+          "name": "author",
+          "type": "java.lang.String"
+        },
+        {
+          "name": "title",
+          "type": "java.lang.String"
+        },
+        {
+          "name": "price",
+          "type": "java.lang.Double"
+        }
+      ]
+    },
+    {
+      "name": "Bicycle",
+      "namespace": "default",
+      "metaType": "VO",
+      "properties": [
+        {
+          "name": "color",
+          "type": "java.lang.String"
+        },
+        {
+          "name": "price",
+          "type": "java.lang.Double"
+        },
+        {
+          "name": "count",
+          "type": "java.lang.Integer"
+        }
+      ]
+    }
+  ]
+}

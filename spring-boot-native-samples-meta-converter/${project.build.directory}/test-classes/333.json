@@ -1,0 +1,77 @@
+[
+  {
+    "store": {
+      "book": [
+        {
+          "category": "reference",
+          "author": "Nigel Rees",
+          "title": "Sayings of the Century",
+          "price": 8.95
+        },
+        {
+          "category": "fiction",
+          "author": "Evelyn Waugh",
+          "title": "Sword of Honour",
+          "price": 12.99
+        },
+        {
+          "category": "fiction",
+          "author": "Herman Melville",
+          "title": "Moby Dick",
+          "isbn": "0-553-21311-3",
+          "price": 8.99
+        },
+        {
+          "category": "fiction",
+          "author": "J. R. R. Tolkien",
+          "title": "The Lord of the Rings",
+          "isbn": "0-395-19395-8",
+          "price": 22.99
+        }
+      ],
+      "bicycle": {
+        "color": "red",
+        "price": 19.958876567765,
+        "count": 3
+      }
+    },
+    "expensive": 10
+  }, {
+    "store": {
+      "book": [
+        {
+          "category": "reference3",
+          "author": "Nigel Rees3",
+          "title": "Sayings of the Century3",
+          "price": 8.953
+        },
+        {
+          "category": "fiction",
+          "author": "Evelyn Waugh",
+          "title": "Sword of Honour",
+          "price": 12.993
+        },
+        {
+          "category": "fiction3",
+          "author": "Herman Melville3",
+          "title": "Moby Dick3",
+          "isbn": "0-553-21311-3",
+          "price": 8.993
+        },
+        {
+          "category": "fiction3",
+          "author": "J. R. R. Tolkien3",
+          "title": "The Lord of the Rings3",
+          "isbn": "0-395-19395-83",
+          "price": 22.993
+        }
+      ],
+      "bicycle": {
+        "color": "red1",
+        "price": 19.93,
+        "count": 30
+      }
+    },
+    "expensive": 9
+  }
+]
